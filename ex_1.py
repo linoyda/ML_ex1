@@ -36,7 +36,8 @@ def k_means_algorithm(centroids, x):
 
 def distance_metric(point_a, point_b):
     # Inspiration: https://towardsdatascience.com/k-means-clustering-from-scratch-6a9d19cafc25
-    return math.sqrt((point_a[0] - point_b[0]) ** 2 + (point_a[1] - point_b[1]) ** 2)
+    # return math.sqrt((point_a[0] - point_b[0]) ** 2 + (point_a[1] - point_b[1]) ** 2)
+    return math.hypot(point_b[0] - point_a[0], point_b[1] - point_a[1])
 
 
 def determine_clusters_according_to_closest_centroid(clusters_arr, centroids):
