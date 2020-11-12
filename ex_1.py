@@ -7,7 +7,6 @@ import scipy.io.wavfile
 def main():
     count = 0  # Counting the iterations of the algorithm.
     con = False  # Checking if we've reached convergence.
-    new_centroids = []
     sample, centroids = sys.argv[1], sys.argv[2]
     fs, y = scipy.io.wavfile.read(sample)
     x = np.array(y.copy())
@@ -63,7 +62,6 @@ def determine_k_new_centroids_according_to_dict(dictionary, centroids):
     # The keys of the dictionary are the indexes of the centroids.
     # Each value is a list of all points assigned to the cluster
     new_centroids = []
-    # new_centroids = np.array([0])
 
     for cluster in dictionary:  # for each cluster
         # count how many points are in each cluster BEFORE CHANGE
